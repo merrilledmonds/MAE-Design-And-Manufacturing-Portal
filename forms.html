@@ -1,0 +1,342 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Rutgers MAE | Order Form for 650:467 Design & Manufacturing I</title>
+        <meta name="description" content="Rutgers MAE Design and Manufacturing 2016-2017 Order Form">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/override.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery-ui.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/vendor/jspdf.debug.js"></script>
+		
+		<script src="js/main.js"></script>
+		<script src="js/ui.js"></script>
+		<script src="js/forms.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar bg-scarlet" role="navigation">
+      <div class="container width-100">
+        <div class="navbar-header text-center text-vertical-center width-100">
+			<div id="nav-logo">
+				<img src="./img/logo.png"></img>
+			</div>
+			<div id="nav-text">
+				<h3>650:467 Design & Manufacturing Portal</h3>
+			</div>
+        </div>
+      </div>
+    </nav>
+	<div class="container padding-2em text-center">
+		<h3>Additional Forms</h3>
+	</div>
+	<div class="container padding-3em">
+		<div class="container width-75">
+			<h3>Information Required For All Forms</h3>
+			<br>
+			<form>
+				<fieldset id="settings-group-project-info">
+					<legend>
+						<h5 class="text-info">Project Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="settings-group-number" class="col-xs-2 col-form-label">Group Number</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-group-number" placeholder="e.g. Q1">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-project-name" class="col-xs-2 col-form-label">Project Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-project-name" placeholder="e.g. Example Project Title">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-advisor" class="col-xs-2 col-form-label">Advisor</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-advisor" placeholder="e.g. Assimina Pelegri">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset id="settings-group-leader-info">
+					<legend>
+						<h5 class="text-info">Leader Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="settings-leader-name" class="col-xs-2 col-form-label">Leader Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-leader-name" placeholder="e.g. Firstname Lastname">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-leader-netid" class="col-xs-2 col-form-label">Leader NetID</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-leader-netid" placeholder="e.g. abc123">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-leader-email" class="col-xs-2 col-form-label">Leader Email</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-leader-email" placeholder="e.g. leader@rutgers.edu">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset id="settings-financial-officer-info">
+					<legend>
+						<h5 class="text-info">Financial Officer Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="settings-financial-officer-name" class="col-xs-2 col-form-label">Financial Officer Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-financial-officer-name" placeholder="e.g. Firstname Lastname">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-financial-officer-netid" class="col-xs-2 col-form-label">Financial Officer NetID</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-financial-officer-netid" placeholder="e.g. xyz123">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-financial-officer-email" class="col-xs-2 col-form-label">Financial Officer Email</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-financial-officer-email" placeholder="e.g. financial.officer@rutgers.edu">
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<br>
+			<h3 class="clickable accordion-toggle" data-toggle="collapse" data-target="#form-special-part-order">Special Part Order Form</h3>
+			<form id="form-special-part-order" class="collapse width-85 margin-auto border-light padding-2em">
+				<div class="form-group">
+					Not available at this time. Check back later.
+				</div>
+			</form>
+			<br>
+			<h3 class="clickable accordion-toggle" data-toggle="collapse" data-target="#form-reimbursement">Reimbursement Request Form</h3>
+			<form id="form-reimbursement" class="collapse width-85 margin-auto border-light padding-2em">
+				<p>
+					Please fill in the form below and submit a signed hard copy to request reimbursement approval. All lines are required. Note that incomplete forms will be rejected automatically.
+				</p>
+				<br>
+				<fieldset id="reimbursement-request-payroll-info">
+					<legend>
+						<h5 class="text-info">Payroll Info</h5>
+					</legend>
+					<div class="form-group-row text-center">
+						<div class="display-inline-block width-40">
+							<label for="reimbursement-request-payroll">Group Members on Rutgers Payroll</label>
+							<textarea class="form-control" rows="5" id="reimbursement-request-payroll" placeholder="One per line."></textarea>
+						</div>
+						<div class="display-inline-block padding-1em">&nbsp;</div>
+						<div class="display-inline-block width-40">
+							<label for="reimbursement-request-not-payroll">Group Members not on Rutgers Payroll</label>
+							<textarea class="form-control" rows="5" id="reimbursement-request-not-payroll" placeholder="One per line."></textarea>
+						</div>
+					</div>
+					<br><br>
+				</fieldset>
+				<fieldset id="reimbursement-request-approved-buyer-info">
+					<legend>
+						<h5 class="text-info">Approved Buyer</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="reimbursement-request-approved-buyer" class="col-xs-3 col-form-label">Name of Person Buying Item</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="reimbursement-request-approved-buyer" placeholder="e.g. Name of your FO">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-approved-payment-method" class="col-xs-3 col-form-label">Payment Method</label>
+						<div class="col-xs-9">
+							<select class="form-control form-control-sm" id="reimbursement-request-approved-payment-method">
+								<option>Visa in Approved Buyer's Name</option>
+								<option>MasterCard in Approved Buyer's Name</option>
+								<option>Other Credit in Approved Buyer's Name
+								<option>Other Debit in Approved Buyer's Name</option>
+								<option>Other (explain in an email to TA)</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-shipping-address" class="col-xs-3 col-form-label">Shipping Address</label>
+						<div class="col-xs-9">
+							<div class="checkbox">
+								<label><input id="reimbursement-request-shipping-address" type="checkbox" value="">I acknowledge that all items must be shipped to the loading dock at 98 Brett Rd in the Approved Buyer's name.</label>
+							</div>
+						</div>
+					</div>
+					<br><br>
+				</fieldset>
+				<fieldset id="reimbursement-request-part-info">
+					<legend>
+						<h5 class="text-info">Part Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="reimbursement-request-part-name" class="col-xs-3 col-form-label">Part Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="reimbursement-request-part-name" placeholder="e.g. Fast Loop Modules">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-sku" class="col-xs-3 col-form-label">SKU#</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="reimbursement-request-sku" placeholder="e.g. MS-02-361">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-vendor" class="col-xs-3 col-form-label">Vendor</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="reimbursement-request-vendor" placeholder="e.g. Swagelok">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-vendor-website" class="col-xs-3 col-form-label">Vendor Website</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="reimbursement-request-vendor-website" placeholder="e.g. www.swagelok.com">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-vendor-is-manufacturer" class="col-xs-3 col-form-label">Is Vendor the Manufacturer?</label>
+						<div class="col-xs-9">
+							<select class="form-control form-control-sm" id="reimbursement-request-vendor-is-manufacturer">
+								<option>Yes</option>
+								<option>No</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-link-to-part" class="col-xs-3 col-form-label">Link To Part</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="reimbursement-request-link-to-part" placeholder="e.g. https://www.swagelok.com/en/Resources/Product-Catalog/Pre-Engineered%20Subsystems">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-price" class="col-xs-3 col-form-label">Unit Price</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="reimbursement-request-price" placeholder="e.g. $150">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-quantity" class="col-xs-3 col-form-label">Quantity Requested</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="reimbursement-request-quantity" placeholder="e.g. 2">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-category" class="col-xs-3 col-form-label">Item Category On Vendor Site</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="reimbursement-request-category" placeholder="e.g. Pre-Engineered Subsystem">
+						</div>
+					</div>
+					<br><br>
+				</fieldset>
+				<fieldset id="reimbursement-request-part-info">
+					<legend>
+						<h5 class="text-info">Reimbursement Justification</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="reimbursement-request-item-use" class="col-form-label">How will the item be used in the project?</label>
+						<div>
+							<textarea class="form-control form-control-sm" id="reimbursement-request-item-use" rows="5" placeholder="i.e. Detailed description of where and how this part will be used. Be as specific as possible."></textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-other-parts-considered" class="col-form-label">What other parts or options did you consider to fulfill the item's stated use?</label>
+						<div>
+							<textarea class="form-control form-control-sm" id="reimbursement-request-other-parts-considered" rows="3" placeholder="i.e. Comma separated list of other brands, parts, and designs considered to fulfill stated purpose."></textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="reimbursement-request-justification" class="col-form-label">Please list all reasons for choosing this item over any competitor products or other designs.</label>
+						<div>
+							<textarea class="form-control form-control-sm" id="reimbursement-request-justification" rows="10" placeholder="i.e. Describe what makes this part so special that you should be approved for a reimbursement. Please pay special attention to why alternatives on Amazon, McMaster, MSC, etc. won't work."></textarea>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset id="reimbursement-request-declarations">
+					<legend>
+						<h5 class="text-info">Declarations</h5>
+					</legend>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="reimbursement-request-declaration-amazon" type="checkbox" value="">We checked Amazon for similar parts and didn't find anything.</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="reimbursement-request-declaration-mcmaster" type="checkbox" value="">We checked McMaster-Carr for similar parts and didn't find anything.</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="reimbursement-request-declaration-approved-vendors" type="checkbox" value="">We checked all Approved Vendors for similar parts and didn't find anything.</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="reimbursement-request-declaration-avoid" type="checkbox" value="">We tried to avoid using the item, or substituting another item or method.</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="reimbursement-request-declaration-specialized-order-form" type="checkbox" value="">We submitted a Specialized Order Form for the part, unless otherwise instructed by our TA.</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="reimbursement-request-declaration-approval" type="checkbox" value="">We understand that submitting this form does not guarantee that our request will be approved.</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="form-group row margin-auto has-error">
+						<div>
+							<div class="checkbox">
+								<label><input id="reimbursement-request-declaration-w9" type="checkbox" value="">Our Approved Buyer is not on Payroll, and will fill out and attach a Rutgers Substitute W-9 to this form. (The Substitute W-9 can be found under Resources on Sakai.)</label>
+							</div>
+						</div>
+					</div>
+					<br><br>
+				</fieldset>
+				<div class="text-right padding-1em">
+					<button class="btn btn-md btn-danger" id="button-reimbursement-request" type="button">Generate PDF</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+    </body>
+</html>
