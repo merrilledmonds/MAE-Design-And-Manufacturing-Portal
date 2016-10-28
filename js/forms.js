@@ -175,7 +175,7 @@ function downloadReimbursementRequestForm(){
 	doc.rect(leftFinancialOfficerInfo-centralDividerThickness,settings.tmargin+0+topAdvisorSignature,rightFinancialOfficerInfo-leftFinancialOfficerInfo+centralDividerThickness,heightAdvisorSignature,"F");
 	doc.setFontSize(9);
 	doc.setTextColor(0);
-	doc.rightAlignedText("Aproved Buyer Signature",settings.tmargin+0.2+topAdvisorSignature+heightAdvisorSignature-0.3,settings.width-settings.rmargin-marginAdvisorSignature);
+	doc.rightAlignedText("Approved Buyer Signature",settings.tmargin+0.2+topAdvisorSignature+heightAdvisorSignature-0.3,settings.width-settings.rmargin-marginAdvisorSignature);
 	signatureLineHeight = settings.tmargin+topAdvisorSignature+heightAdvisorSignature-0.3;
 	doc.setLineWidth(0.01);
 	doc.line(leftFinancialOfficerInfo+0.1,signatureLineHeight,rightFinancialOfficerInfo-0.1,signatureLineHeight);
