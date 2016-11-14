@@ -40,7 +40,7 @@ function deleteClicked(clicked){
 	}
 }
 function addLine(){
-	addedLine = $("#items-list").append(newLineText).children().last()	;
+	addedLine = $("#items-list").append(newLineText).children().last();
 	$("#items-list").children().last().find("button").click(function(){
 		deleteClicked($(this));
 	});

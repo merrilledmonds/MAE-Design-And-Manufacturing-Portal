@@ -127,10 +127,112 @@
 				</fieldset>
 			</form>
 			<br>
-			<h3 class="clickable accordion-toggle" data-toggle="collapse" data-target="#form-special-part-order">Special Part Order Form</h3>
+			<h3 class="clickable accordion-toggle" data-toggle="collapse" data-target="#form-special-part-order">Specialized Part Order Form</h3>
 			<form id="form-special-part-order" class="collapse width-85 margin-auto border-light padding-2em">
-				<div class="form-group">
-					Not available at this time. Check back later.
+				<p>
+					Please fill in the form below and submit a signed hard copy to request a specialized part. All lines are required. Note that incomplete forms may be rejected.
+				</p>
+				<br>
+				<fieldset id="special-part-order-recipient">
+					<legend>
+						<h5 class="text-info">Recipient Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="special-part-order-recipient-name" class="col-xs-2 col-form-label">Recipient Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="special-part-order-recipient-name" placeholder="e.g. Firstname Lastname">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="special-part-order-recipient-netid" class="col-xs-2 col-form-label">Recipient NetID</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="special-part-order-recipient-netid" placeholder="e.g. xyz123">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="special-part-order-recipient-email" class="col-xs-2 col-form-label">Recipient Email</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="special-part-order-recipient-email" placeholder="e.g. recipient@rutgers.edu">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="special-part-order-recipient-phone" class="col-xs-2 col-form-label">Recipient Phone</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="special-part-order-recipient-phone" placeholder="e.g. (555)123-4567">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset id="special-part-order-parts-list">
+					<legend>
+						<h5 class="text-info">Parts List</h5>
+					</legend>
+					<p>Please list all items you are interested in buying from a non-approved vendor.</p>
+					<table class="table table-hover small">
+						<thead>
+							<tr>
+								<td><h5>Vendor</h5></td>
+								<td><h5>Item SKU#</h5></td>
+								<td><h5>Quantity</h5></td>
+								<td><h5>Price/Unit</h5></td>
+								<td><h5>Link to Item</h5></td>
+							</tr>
+						</thead>
+						<tbody class="small" id="items-list">
+							<tr class="items-list-line">
+								<td class="item-vendor"><input type="text" class="form-control item-vendor-input"placeholder="Vendor"></input</td>
+								<td class="item-sku"><input type="text" class="form-control item-sku-input" placeholder="Item SKU#"></input></td>
+								<td class="item-quantity"><input type="text" class="form-control item-quantity-input" placeholder="Quantity"></input></td>
+								<td class="item-price"><input type="text" class="form-control item-price-input" placeholder="0.00"></input></td>
+								<td class="item-link"><input type="text" class="form-control item-link-input" placeholder="http://"></input></td>
+								<td class="text-right">
+									<button type="button" class="btn btn-danger btn-circle button-delete"><i class="glyphicon glyphicon-remove"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table">
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="text-right">
+									<button type="button" class="btn btn-success btn-circle button-add"><i class="glyphicon glyphicon-plus-sign"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				<fieldset id="special-part-order-declarations">
+					<legend>
+						<h5 class="text-info">Declarations</h5>
+					</legend>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="special-part-order-declaration-amazon" type="checkbox" value="" checked>We checked Amazon for similar parts and didn't find anything.</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="special-part-order-declaration-mcmaster" type="checkbox" value="" checked>We checked McMaster-Carr for similar parts and didn't find anything.</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="special-part-order-declaration-approved-vendors" type="checkbox" value="" checked>We checked all Approved Vendors for similar parts and didn't find anything.</label>
+							</div>
+						</div>
+					</div>
+					<br><br>
+				</fieldset>
+				<div class="text-right padding-1em">
+					<button class="btn btn-md btn-danger" id="button-special-part-order" type="button">Generate Files</button>
 				</div>
 			</form>
 			<br>
