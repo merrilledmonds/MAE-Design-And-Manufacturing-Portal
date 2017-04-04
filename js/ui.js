@@ -3,7 +3,7 @@ function extractNewLineText(){
 	newLineText = $("#items-list").first().html();
 }
 
-additionalVendors = ["Sigma-Aldrich","MSC Industrial","Airgas","Digikey"];
+additionalVendors = ["Sigma-Aldrich","MSC Industrial","Airgas"];
 function injectAdditionalVendors(){
 	$(".item-vendor-input").each(function(index){
 		for(vendor_index=0; vendor_index<additionalVendors.length;vendor_index++){

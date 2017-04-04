@@ -5,6 +5,9 @@ $(document).ready(function(){
 	$("#button-special-part-order").click(function(){
 		downloadSpecializedOrderForm();
 	});
+	$("#button-brochure").click(function(){
+		downloadBrochureForm();
+	});
 	var url = document.location.toString();
 	if ( url.match('#') ) {
 		requestedForm=url.split("#")[1].toLowerCase();
@@ -654,6 +657,191 @@ function downloadReimbursementRequestForm(){
 		currentItemTop += heightLine;
 	}
 	
+	
+	
+	//doc.output("dataurlnewwindow");
+	doc.save(""+orderInfo.groupNumber +"_"+ Math.floor(Date.now()/100/60/60/24) +".pdf")
+	
+}
+
+
+function downloadBrochureForm(){
+	orderInfo={
+		groupNumber: $("#settings-group-number").val(),
+		projectName: $("#settings-project-name").val(),
+		advisor: $("#settings-advisor").val(),
+		leaderName: $("#settings-leader-name").val(),
+		leaderNetID: $("#settings-leader-netid").val(),
+		leaderEmail: $("#settings-leader-email").val(),
+		financialOfficerName: $("#settings-financial-officer-name").val(),
+		financialOfficerNetID: $("#settings-financial-officer-netid").val(),
+		financialOfficerEmail: $("#settings-financial-officer-email").val(),
+		members: $("#brochure-members").val(),
+		collab: $("#brochure-collab").val(),
+		title: $("#brochure-title").val(),
+		description: $("#brochure-description").val(),
+		sponsorList: $("#brochure-sponsor-list").val(),
+	};
+	
+
+	settings={
+		lmargin: 0.75,
+		rmargin: 0.75,
+		tmargin: 0.75,
+		bmargin: 1.5,
+		width: 8.5,
+		height: 11};
+	topGroupInfo = 1;
+	centralDividerThickness = 0.15;
+	leftGroupInfo = settings.lmargin;
+	rightGroupInfo = settings.width/2-centralDividerThickness/2;
+	topFinancialOfficerInfo = topGroupInfo;
+	leftFinancialOfficerInfo = settings.width/2+centralDividerThickness/2;
+	rightFinancialOfficerInfo = settings.width-settings.rmargin;
+	topSignature = topGroupInfo+1.6	;
+	
+	groupInfoLabels = ["Group Number","Project Name","Advisor","Group Leader","Leader NetID","Leader Email"];
+	groupInfoValues = [orderInfo.groupNumber, orderInfo.projectName, orderInfo.advisor, orderInfo.leaderName, orderInfo.leaderNetID, orderInfo.leaderEmail];
+	financialOfficerInfoLabels = ["FO Name","FO NetID","FO Email"];
+	financialOfficerInfoValues = [orderInfo.financialOfficerName, orderInfo.financialOfficerNetID, orderInfo.financialOfficerEmail];
+
+	doc = new jsPDF('p','in',[settings.height,settings.width]);
+	doc.addFont("Calibri","Calibri","normal");
+	doc.setFont("Helvetica");
+	doc.setFontStyle("normal");
+	
+	//Title
+	doc.setFontSize(14);
+	doc.centeredText("RUTGERS MAE 468: DESIGN AND MANUFACTURING II",settings.tmargin+0.5);
+	
+	//Scarlet Band
+	doc.setFillColor(204,0,51);
+	doc.rect(settings.lmargin,settings.tmargin+0.6,settings.width-settings.lmargin-settings.rmargin,0.3,"F");
+	doc.setFontSize(11);
+	doc.setTextColor(255);
+	doc.centeredText("Spring 2017 Senior Design Brochure Information",settings.tmargin+0.8)
+	
+	//Group Info
+	heightGroupInfoTitle = 0.3;
+	doc.setFillColor(100);
+	doc.rect(leftGroupInfo,settings.tmargin+0+topGroupInfo,rightGroupInfo-leftGroupInfo,heightGroupInfoTitle,"F");
+	doc.setFontSize(9);
+	doc.setTextColor(255);
+	doc.text("GROUP INFORMATION",leftGroupInfo+0.1,settings.tmargin+0.2+topGroupInfo);
+	
+	//Group Info Labels
+	marginGroupInfoLabels = 0.2;
+	heightGroupInfoLabels = 0.2;
+	for(i=0;i<groupInfoLabels.length;i++){
+		if(i%2==0){
+			doc.setFillColor(220);
+		}else{
+			doc.setFillColor(245);
+		}
+		doc.rect(leftGroupInfo,settings.tmargin+heightGroupInfoLabels*(i)+heightGroupInfoTitle+topGroupInfo,rightGroupInfo-leftGroupInfo,heightGroupInfoLabels,"F");
+		doc.setFontSize(9);
+		doc.setTextColor(0);
+		lineBottomHeight=settings.tmargin+heightGroupInfoLabels*(i)+heightGroupInfoTitle+0.15+topGroupInfo;
+		doc.rightAlignedText(groupInfoLabels[i],lineBottomHeight,leftGroupInfo+settings.lmargin+marginGroupInfoLabels);
+		doc.text(groupInfoValues[i],leftGroupInfo+settings.lmargin+marginGroupInfoLabels+0.1,lineBottomHeight);
+	}
+	
+	//Financial Officer Info
+	heightFinancialOfficerInfoTitle = 0.3;
+	doc.setFillColor(100);
+	doc.rect(leftFinancialOfficerInfo,settings.tmargin+0+topFinancialOfficerInfo,rightFinancialOfficerInfo-leftFinancialOfficerInfo,heightFinancialOfficerInfoTitle,"F");
+	doc.setFontSize(9);
+	doc.setTextColor(255);
+	doc.text("FINANCIAL OFFICER INFORMATION",leftFinancialOfficerInfo+0.1,settings.tmargin+0.2+topFinancialOfficerInfo);
+	
+	//Financial Officer Info Labels
+	marginFinancialOfficerInfoLabels = 0.15;
+	heightFinancialOfficerInfoLabels = 0.2;
+	for(i=0;i<financialOfficerInfoLabels.length;i++){
+		if(i%2==0){
+			doc.setFillColor(220);
+		}else{
+			doc.setFillColor(245);
+		}
+		doc.rect(leftFinancialOfficerInfo,settings.tmargin+heightFinancialOfficerInfoLabels*(i)+heightFinancialOfficerInfoTitle+topFinancialOfficerInfo,rightFinancialOfficerInfo-leftFinancialOfficerInfo,heightFinancialOfficerInfoLabels,"F");
+		doc.setFontSize(9);
+		doc.setTextColor(0);
+		lineBottomHeight = settings.tmargin+heightFinancialOfficerInfoLabels*(i)+heightFinancialOfficerInfoTitle+0.15+topFinancialOfficerInfo;
+		doc.rightAlignedText(financialOfficerInfoLabels[i],lineBottomHeight,leftFinancialOfficerInfo+settings.lmargin+marginFinancialOfficerInfoLabels);
+		doc.text(financialOfficerInfoValues[i],leftFinancialOfficerInfo+settings.lmargin+marginFinancialOfficerInfoLabels+0.1,lineBottomHeight);
+	}
+	
+	
+	
+	
+	//Signatures
+	heightSignature = 1;
+	marginSignature = 0.2;
+	marginFOSignature = 0.05;
+	bottomSignature = topSignature + heightSignature;
+	// FO signature
+	topFOSignature = settings.tmargin+heightFinancialOfficerInfoLabels*financialOfficerInfoLabels.length+heightFinancialOfficerInfoTitle+topFinancialOfficerInfo+marginFOSignature;
+	heightFOSignature = (settings.tmargin+topSignature)-topFOSignature;
+	doc.setFillColor(230);
+	doc.rect(leftFinancialOfficerInfo,topFOSignature,rightFinancialOfficerInfo-leftFinancialOfficerInfo,heightFOSignature,"F");
+	FOSignatureLineHeight = topFOSignature+heightFOSignature-0.2;
+	doc.rightAlignedText("FO Signature",FOSignatureLineHeight+0.15,settings.width-settings.rmargin-marginSignature);
+	doc.setLineWidth(0.01);
+	doc.line(leftFinancialOfficerInfo+0.1,FOSignatureLineHeight,rightFinancialOfficerInfo-0.1,FOSignatureLineHeight);
+	// Advisor signature
+	doc.setFillColor(230);
+	doc.rect(leftGroupInfo,settings.tmargin+0+topSignature,rightFinancialOfficerInfo-leftGroupInfo,heightSignature,"F");
+	doc.setFontSize(9);
+	doc.setTextColor(0);
+	doc.rightAlignedText("Advisor Signature",settings.tmargin+0.2+topSignature+heightSignature-0.3,settings.width-settings.rmargin-marginSignature);
+	signatureLineHeight = settings.tmargin+topSignature+heightSignature-0.3;
+	doc.setLineWidth(0.01);
+	doc.line(leftFinancialOfficerInfo+0.1,signatureLineHeight,rightFinancialOfficerInfo-0.1,signatureLineHeight);
+	// Leader signature
+	doc.setFontSize(9);
+	doc.setTextColor(0);
+	doc.text("Group Leader Signature",settings.lmargin+0.2,settings.tmargin+0.2+topSignature+heightSignature-0.3);
+	signatureLineHeight = settings.tmargin+topSignature+heightSignature-0.3;
+	doc.setLineWidth(0.01);
+	doc.line(leftGroupInfo+0.1,signatureLineHeight,rightGroupInfo-0.1,signatureLineHeight);
+	
+	
+	doc.setFontSize(8);
+	heightLine=0.15;
+	heightText=0.13;
+	
+	pageCount = 1;
+	addPageBreak=function(){
+		doc.addPage();
+		doc.text("Spring 2017 Senior Design Brochure Information - "+orderInfo.groupNumber,settings.lmargin,settings.tmargin);
+		doc.text("Continued from Page "+pageCount+".",settings.lmargin,settings.tmargin+0.2);
+		currentItemTop = settings.tmargin+0.5;
+		pageCount++;
+	};
+	
+	currentItemTop = settings.tmargin+topSignature+heightSignature+0.1;
+	currentItemTop += heightLine;
+	
+	boxMargin=0.3;
+	fieldTitles = ["Group Members","Collaborators","Final Project Title","Project Description","Sponsor List"];
+	fieldContents = [orderInfo.members,
+					 orderInfo.collab,
+					 orderInfo.title,
+					 orderInfo.description,
+					 orderInfo.sponsorList];
+	for(field_index=0; field_index<fieldTitles.length; field_index++){
+		doc.text(fieldTitles[field_index],settings.lmargin+boxMargin-0.2,currentItemTop);
+		currentItemTop+=heightLine*1.5;
+		boxText = doc.splitTextToSize(fieldContents[field_index],settings.width-settings.lmargin-settings.rmargin-boxMargin);
+		for(boxText_index=0; boxText_index<boxText.length; boxText_index++){
+			if(currentItemTop+heightLine>(settings.height-settings.bmargin)){
+				addPageBreak();
+			}
+			doc.text(boxText[boxText_index],settings.lmargin+boxMargin,currentItemTop);
+			currentItemTop += heightLine;
+		}
+		currentItemTop += heightLine;
+	}
 	
 	
 	//doc.output("dataurlnewwindow");

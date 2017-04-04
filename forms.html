@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Rutgers MAE | Order Form for 650:467 Design & Manufacturing I</title>
+        <title>Rutgers MAE | Additional Forms for 650:467 Design & Manufacturing I</title>
         <meta name="description" content="Rutgers MAE Design and Manufacturing 2016-2017 Order Form">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -435,6 +435,56 @@
 				</fieldset>
 				<div class="text-right padding-1em">
 					<button class="btn btn-md btn-danger" id="button-reimbursement-request" type="button">Generate PDF</button>
+				</div>
+			</form><br>
+			<h3 class="clickable accordion-toggle" data-toggle="collapse" data-target="#form-brochure">Brochure Form</h3>
+			<form id="form-brochure" class="collapse width-85 margin-auto border-light padding-2em">
+				<p>
+					Please fill in the form below and submit a signed hard copy to ensure the brochure is correct. The TAs reserve the right to edit the final description to fit the limitations of the brochure. All lines are required.
+				</p>
+				<br>
+				<fieldset id="brochure-group-info">
+					<legend>
+						<h5 class="text-info">Group Info</h5>
+					</legend>
+					<div class="form-group-row text-center">
+						<label for="brochure-members">Group Members, Listed Alphabetically</label>
+						<textarea class="form-control" rows="5" id="brochure-members" placeholder="One per line."></textarea>
+					</div>
+					<div class="form-group-row text-center">
+						<label for="brochure-collab">Additional Collaborators, Excluding Sponsors</label>
+						<textarea class="form-control" rows="5" id="brochure-collab" placeholder="Additional members, collaborators from other departments, or additional advisors. Give us as much info as you can. One per line."></textarea>
+					</div>
+					<br><br>
+				</fieldset>
+				<fieldset id="brochure-project-info">
+					<legend>
+						<h5 class="text-info">Project Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="brochure-title" class="col-xs-3 col-form-label">Finalized Project Title</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="brochure-title" placeholder="Full title, e.g. Fabrication of a Mass-Damper System for Buildings">
+						</div>
+					</div>
+					<div class="form-group-row text-center">
+						<label for="brochure-description">Project Description</label>
+						<textarea class="form-control" rows="5" id="brochure-description" placeholder="50 words max."></textarea>
+					</div>
+					<br><br>
+				</fieldset>
+				<fieldset id="brochure-sponsor-info">
+					<legend>
+						<h5 class="text-info">Sponsor Info</h5>
+					</legend>
+					<div class="form-group-row text-center">
+						<label for="brochure-sponsor-list">Sponsor List</label>
+						<textarea class="form-control" rows="5" id="brochure-sponsor-list" placeholder="One per line. Please give us the name of each company, what they gave you, and a link to their company website if possible (or a link to their logo if not), e.g. Company Name. Monetary contributions of $1500 and technical assistance. https://www.company.com/"></textarea>
+					</div>
+					<br><br>
+				</fieldset>
+				<div class="text-right padding-1em">
+					<button class="btn btn-md btn-danger" id="button-brochure" type="button">Generate PDF</button>
 				</div>
 			</form>
 		</div>
