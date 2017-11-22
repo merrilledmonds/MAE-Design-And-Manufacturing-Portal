@@ -486,7 +486,88 @@
 				<div class="text-right padding-1em">
 					<button class="btn btn-md btn-danger" id="button-brochure" type="button">Generate PDF</button>
 				</div>
-			</form>
+			</form><br>
+			<h3 class="clickable accordion-toggle" data-toggle="collapse" data-target="#form-3d-print">3D Print Quote Request Form</h3>
+			<form id="form-3d-print" class="collapse width-85 margin-auto border-light padding-2em">
+				<p>
+					Please fill in the form below and take a printout of the generated PDF and your part files to John Petrowski (MAE) or Lee Pagenkopf (Livi Makerspace) to get a quote for your 3D print. Once you get a quote, bring the quote to your advisor to be signed and give the signed form to your TA.
+					<br><br>
+					If you want a quote from both MAE and Makerspace, print two copies of the pdf (one each).
+					<br><br>
+					All lines are required.
+				</p>
+				<br>
+				<fieldset id="3d-print-recipient">
+					<legend>
+						<h5 class="text-info">Recipient Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="3d-print-recipient-name" class="col-xs-2 col-form-label">Recipient Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="3d-print-recipient-name" placeholder="e.g. Firstname Lastname">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="3d-print-recipient-netid" class="col-xs-2 col-form-label">Recipient NetID</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="3d-print-recipient-netid" placeholder="e.g. xyz123">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="3d-print-recipient-email" class="col-xs-2 col-form-label">Recipient Email</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="3d-print-recipient-email" placeholder="e.g. recipient@rutgers.edu">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="3d-print-recipient-phone" class="col-xs-2 col-form-label">Recipient Phone</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="3d-print-recipient-phone" placeholder="e.g. (555)123-4567">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset id="3d-print-details">
+					<legend>
+						<h5 class="text-info">Print Details</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="3d-print-part-name" class="col-xs-3 col-form-label">File/Part Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="3d-print-part-name" placeholder="e.g. q1_sphere_bot.stl">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="3d-print-part-description" class="col-xs-3 col-form-label">File/Part Descriptor</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="3d-print-part-description" placeholder="e.g. Q1 Sphere Bottom">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="3d-print-options-deadline" class="col-xs-3 col-form-label">Print Options</label>
+						<div class="col-xs-9">
+							<div class="checkbox">
+								<label><input id="3d-print-options-deadline" type="checkbox" value="">We have a tight print deadline - please contact us.</label>
+							</div>
+							<div class="checkbox">
+								<label><input id="3d-print-options-deadline" type="checkbox" value="">We'd like to meet to discuss our options. (MAE Only)</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="3d-print-options-preferences" class="col-xs-3 col-form-label">MAE Printer Selection</label>
+						<div class="col-xs-9">
+							<select class="form-control form-control-sm" id="3d-print-options-preferences">
+								<option value="nopref" selected>No Printer Preference - Choose Whichever's Available</option>
+								<option value="polyjet">Polyjet Preferred ($73.85/hr)</option>
+								<option value="fdm">FDM Preferred ($20.62/hr)</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+				<br><div class="text-right padding-1em">
+					<button class="btn btn-md btn-danger" id="button-3d-print" type="button">Generate PDF</button>
+				</div>
+			</form><br><br>
 		</div>
 	</div>
 

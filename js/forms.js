@@ -8,6 +8,9 @@ $(document).ready(function(){
 	$("#button-brochure").click(function(){
 		downloadBrochureForm();
 	});
+	$("#button-3d-print").click(function(){
+		download3DPrintForm();
+	});
 	var url = document.location.toString();
 	if ( url.match('#') ) {
 		requestedForm=url.split("#")[1].toLowerCase();
@@ -71,7 +74,7 @@ function downloadSpecializedOrderFormPDF(){
 	doc.rect(settings.lmargin,settings.tmargin+0.6,settings.width-settings.lmargin-settings.rmargin,0.3,"F");
 	doc.setFontSize(11);
 	doc.setTextColor(255);
-	doc.centeredText("Fall 2016 Senior Design Specialized Part Order Form",settings.tmargin+0.8)
+	doc.centeredText("Fall 2017 Senior Design Specialized Part Order Form",settings.tmargin+0.8)
 	
 	//Generator
 	doc.setFontSize(8);
@@ -140,7 +143,7 @@ function downloadSpecializedOrderFormPDF(){
 	
 	//Recipient Signature
 	heightRecipientSignature = 1;
-	marginRecipientSignature = 0.2
+	marginRecipientSignature = 0.2;
 	doc.setFillColor(230);
 	doc.rect(leftGroupInfo,settings.tmargin+0+topRecipientSignature,rightGroupInfo-leftGroupInfo+centralDividerThickness,heightRecipientSignature,"F");
 	doc.setFontSize(9);
@@ -453,7 +456,7 @@ function downloadReimbursementRequestForm(){
 	doc.rect(settings.lmargin,settings.tmargin+0.6,settings.width-settings.lmargin-settings.rmargin,0.3,"F");
 	doc.setFontSize(11);
 	doc.setTextColor(255);
-	doc.centeredText("Fall 2016 Senior Design Request for Reimbursement Approval",settings.tmargin+0.8)
+	doc.centeredText("Fall 2017 Senior Design Request for Reimbursement Approval",settings.tmargin+0.8)
 	
 	//Group Info
 	heightGroupInfoTitle = 0.3;
@@ -719,7 +722,7 @@ function downloadBrochureForm(){
 	doc.rect(settings.lmargin,settings.tmargin+0.6,settings.width-settings.lmargin-settings.rmargin,0.3,"F");
 	doc.setFontSize(11);
 	doc.setTextColor(255);
-	doc.centeredText("Spring 2017 Senior Design Brochure Information",settings.tmargin+0.8)
+	doc.centeredText("Spring 2018 Senior Design Brochure Information",settings.tmargin+0.8)
 	
 	//Group Info
 	heightGroupInfoTitle = 0.3;
@@ -813,7 +816,7 @@ function downloadBrochureForm(){
 	pageCount = 1;
 	addPageBreak=function(){
 		doc.addPage();
-		doc.text("Spring 2017 Senior Design Brochure Information - "+orderInfo.groupNumber,settings.lmargin,settings.tmargin);
+		doc.text("Spring 2018 Senior Design Brochure Information - "+orderInfo.groupNumber,settings.lmargin,settings.tmargin);
 		doc.text("Continued from Page "+pageCount+".",settings.lmargin,settings.tmargin+0.2);
 		currentItemTop = settings.tmargin+0.5;
 		pageCount++;
@@ -848,3 +851,273 @@ function downloadBrochureForm(){
 	doc.save(""+orderInfo.groupNumber +"_"+ Math.floor(Date.now()/100/60/60/24) +".pdf")
 	
 }
+
+
+function download3DPrintForm(){
+	settings={
+		lmargin: 0.75,
+		rmargin: 0.75,
+		tmargin: 0.75,
+		bmargin: 1.75,
+		width: 8.5,
+		height: 11};
+	topGroupInfo = 1.5;
+	centralDividerThickness = 0.15;
+	leftGroupInfo = settings.lmargin;
+	rightGroupInfo = settings.width/2-centralDividerThickness/2;
+	topRecipientInfo = topGroupInfo;
+	leftRecipientInfo = settings.width/2+centralDividerThickness/2;
+	rightRecipientInfo = settings.width-settings.rmargin;
+	topDisclaimer = topGroupInfo+1.5;
+	topRecipientSignature = topDisclaimer+0.9;
+	topAdvisorSignature = topRecipientSignature;
+	
+	
+	orderInfo={
+		groupNumber: $("#settings-group-number").val(),
+		projectName: $("#settings-project-name").val(),
+		advisor: $("#settings-advisor").val(),
+		leaderName: $("#settings-leader-name").val(),
+		leaderNetID: $("#settings-leader-netid").val(),
+		leaderEmail: $("#settings-leader-email").val(),
+		financialOfficerName: $("#settings-financial-officer-name").val(),
+		financialOfficerNetID: $("#settings-financial-officer-netid").val(),
+		financialOfficerEmail: $("#settings-financial-officer-email").val(),
+		recipientName: $("#3d-print-recipient-name").val(),
+		recipientNetID: $("#3d-print-recipient-netid").val(),
+		recipientEmail: $("#3d-print-recipient-email").val(),
+		recipientPhone: $("#3d-print-recipient-phone").val(),
+		partName: $("#3d-print-part-name").val(),
+		partDescription: $("#3d-print-part-description").val(),
+		deadline: $("#3d-print-options-deadline").is(":checked"),
+		meeting: $("#3d-print-options-deadline").is(":checked"),
+		printerPref: $("#3d-print-options-preferences").val(),
+	};
+	
+	groupInfoLabels = ["Group Number","Project Name","Advisor","Group Leader","Leader Email"];
+	groupInfoValues = [orderInfo.groupNumber, orderInfo.projectName, orderInfo.advisor, orderInfo.leaderName, orderInfo.leaderEmail];
+	recipientInfoLabels = ["FO Name","FO Email","Recipient Name","Recipient Email","Recipient Phone#"];
+	recipientInfoValues = [orderInfo.financialOfficerName, orderInfo.financialOfficerEmail, orderInfo.recipientName, orderInfo.recipientEmail, orderInfo.recipientPhone];
+
+	doc = new jsPDF('p','in',[settings.height,settings.width]);
+	doc.addFont("Calibri","Calibri","normal");
+	doc.setFont("Helvetica");
+	doc.setFontStyle("normal");
+	
+	//Title
+	doc.setFontSize(14);
+	doc.centeredText("RUTGERS MAE 467: DESIGN AND MANUFACTURING I",settings.tmargin+0.5);
+	
+	//Scarlet Band
+	doc.setFillColor(204,0,51);
+	doc.rect(settings.lmargin,settings.tmargin+0.6,settings.width-settings.lmargin-settings.rmargin,0.3,"F");
+	doc.setFontSize(11);
+	doc.setTextColor(255);
+	doc.centeredText("Fall 2017 Senior Design 3D Print Quote Request Form",settings.tmargin+0.8)
+	
+	//Generator
+	doc.setFontSize(8);
+	doc.setTextColor(0);
+	date = new Date();
+	doc.centeredText("Generated "+date.toUTCString()+" through the Design and Manufacturing Portal.",settings.tmargin+1.2);
+	doc.setFontSize(11);
+	
+	//Group Info
+	heightGroupInfoTitle = 0.3;
+	doc.setFillColor(100);
+	doc.rect(leftGroupInfo,settings.tmargin+0+topGroupInfo,rightGroupInfo-leftGroupInfo,heightGroupInfoTitle,"F");
+	doc.setFontSize(9);
+	doc.setTextColor(255);
+	doc.text("GROUP INFORMATION",leftGroupInfo+0.1,settings.tmargin+0.2+topGroupInfo);
+	
+	//Group Info Labels
+	marginGroupInfoLabels = 0.2;
+	heightGroupInfoLabels = 0.2;
+	for(i=0;i<groupInfoLabels.length;i++){
+		if(i%2==0){
+			doc.setFillColor(220);
+		}else{
+			doc.setFillColor(245);
+		}
+		doc.rect(leftGroupInfo,settings.tmargin+heightGroupInfoLabels*(i)+heightGroupInfoTitle+topGroupInfo,rightGroupInfo-leftGroupInfo,heightGroupInfoLabels,"F");
+		doc.setFontSize(9);
+		doc.setTextColor(0);
+		lineBottomHeight=settings.tmargin+heightGroupInfoLabels*(i)+heightGroupInfoTitle+0.15+topGroupInfo;
+		doc.rightAlignedText(groupInfoLabels[i],lineBottomHeight,leftGroupInfo+settings.lmargin+marginGroupInfoLabels);
+		doc.text(groupInfoValues[i],leftGroupInfo+settings.lmargin+marginGroupInfoLabels+0.1,lineBottomHeight);
+	}
+	
+	//Recipient Info
+	heightRecipientInfoTitle = 0.3;
+	doc.setFillColor(100);
+	doc.rect(leftRecipientInfo,settings.tmargin+0+topRecipientInfo,rightRecipientInfo-leftRecipientInfo,heightRecipientInfoTitle,"F");
+	doc.setFontSize(9);
+	doc.setTextColor(255);
+	doc.text("FO/RECIPIENT INFORMATION",leftRecipientInfo+0.1,settings.tmargin+0.2+topRecipientInfo);
+	
+	//Recipient Info Labels
+	marginRecipientInfoLabels = 0.35;
+	heightRecipientInfoLabels = 0.2;
+	for(i=0;i<recipientInfoLabels.length;i++){
+		if(i%2==0){
+			doc.setFillColor(220);
+		}else{
+			doc.setFillColor(245);
+		}
+		doc.rect(leftRecipientInfo,settings.tmargin+heightRecipientInfoLabels*(i)+heightRecipientInfoTitle+topRecipientInfo,rightRecipientInfo-leftRecipientInfo,heightRecipientInfoLabels,"F");
+		doc.setFontSize(9);
+		doc.setTextColor(0);
+		lineBottomHeight = settings.tmargin+heightRecipientInfoLabels*(i)+heightRecipientInfoTitle+0.15+topRecipientInfo;
+		doc.rightAlignedText(recipientInfoLabels[i],lineBottomHeight,leftRecipientInfo+settings.lmargin+marginRecipientInfoLabels);
+		doc.text(recipientInfoValues[i],leftRecipientInfo+settings.lmargin+marginRecipientInfoLabels+0.1,lineBottomHeight);
+	}
+	
+	//Disclaimer
+	disclaimerText = "By placing a print order, the group members and their advisor agree to be charged the amount shown below. Please note that no refunds will be issued for 3D prints. TAs reserve the right to postpone orders that risk going over the group's budget until any issues can be sorted out. The named recipient hereby agrees to pick up any orders in a timely fashion, under penalty of having the items discarded or repurposed.";
+	heightDisclaimer = 0.3;
+	marginDisclaimer = 0.5;
+	doc.setFontSize(9);
+	doc.setTextColor(0);
+	doc.text(doc.splitTextToSize(disclaimerText,settings.width-settings.lmargin-settings.rmargin-marginDisclaimer*2),settings.lmargin+marginDisclaimer,settings.tmargin+0.2+topDisclaimer);
+	
+	//Recipient Signature
+	heightRecipientSignature = 1;
+	marginRecipientSignature = 0.2
+	doc.setFillColor(230);
+	doc.rect(leftGroupInfo,settings.tmargin+0+topRecipientSignature,rightGroupInfo-leftGroupInfo+centralDividerThickness,heightRecipientSignature,"F");
+	doc.setFontSize(9);
+	doc.setTextColor(0);
+	doc.text("Recipient Signature",settings.lmargin+marginRecipientSignature,settings.tmargin+0.2+topRecipientSignature+heightRecipientSignature-0.3);
+	
+	//Advisor Signature
+	heightAdvisorSignature = 1;
+	marginAdvisorSignature = 0.2
+	bottomAdvisorSignature = topAdvisorSignature + heightAdvisorSignature;
+	doc.setFillColor(230);
+	doc.rect(leftRecipientInfo-centralDividerThickness,settings.tmargin+0+topAdvisorSignature,rightRecipientInfo-leftRecipientInfo+centralDividerThickness,heightAdvisorSignature,"F");
+	doc.setFontSize(9);
+	doc.setTextColor(0);
+	doc.rightAlignedText("Advisor Signature",settings.tmargin+0.2+topAdvisorSignature+heightAdvisorSignature-0.3,settings.width-settings.rmargin-marginAdvisorSignature);
+	signatureLineHeight = settings.tmargin+topAdvisorSignature+heightAdvisorSignature-0.3;
+	doc.setLineWidth(0.01);
+	doc.line(leftGroupInfo+0.1,signatureLineHeight,rightGroupInfo-0.1,signatureLineHeight);
+	doc.line(leftRecipientInfo+0.1,signatureLineHeight,rightRecipientInfo-0.1,signatureLineHeight);
+	
+	
+	//ITEMS LIST
+	maxBottom = settings.height-settings.bmargin;
+	pageCount = 1;
+	topItemsList = bottomAdvisorSignature + 0.5;
+	leftLabel = 0.2;
+	leftBox = 2.25;
+	heightLine = 0.45;
+	heightText = 0.4;
+	
+	doc.setFontSize(10);
+	doc.setTextColor(0);
+	doc.centeredText("To Be Completed By Print Coordinator",settings.tmargin+topItemsList);
+	topItemsList += heightLine/2;
+	doc.setTextColor(125);
+	doc.centeredText("Coordinators, please only fill in relevant fields.",settings.tmargin+topItemsList);
+	topItemsList += heightLine;
+	
+	doc.setFontSize(13);
+	doc.setTextColor(0);
+	doc.text("Part/File Name:",settings.lmargin+leftLabel,settings.tmargin+topItemsList);
+	doc.text(orderInfo.partName,settings.lmargin+leftBox+0.2,settings.tmargin+topItemsList-0.1);
+	doc.setLineWidth(0.01);
+	doc.line(settings.lmargin+leftBox,settings.tmargin+topItemsList,rightRecipientInfo-0.1,settings.tmargin+topItemsList);
+	topItemsList += heightLine;
+	doc.text("Part/File Description:",settings.lmargin+leftLabel,settings.tmargin+topItemsList);
+	doc.text(orderInfo.partDescription,settings.lmargin+leftBox+0.2,settings.tmargin+topItemsList-0.1);
+	doc.setLineWidth(0.01);
+	doc.line(settings.lmargin+leftBox,settings.tmargin+topItemsList,rightRecipientInfo-0.1,settings.tmargin+topItemsList);
+	topItemsList += heightLine;
+	doc.text("Weight/Volume:",settings.lmargin+leftLabel,settings.tmargin+topItemsList);
+	doc.setLineWidth(0.01);
+	doc.line(settings.lmargin+leftBox,settings.tmargin+topItemsList,rightRecipientInfo-0.1,settings.tmargin+topItemsList);
+	topItemsList += heightLine;
+	doc.text("Print Duration:",settings.lmargin+leftLabel,settings.tmargin+topItemsList);
+	doc.setLineWidth(0.01);
+	doc.line(settings.lmargin+leftBox,settings.tmargin+topItemsList,rightRecipientInfo-0.1,settings.tmargin+topItemsList);
+	topItemsList += heightLine;
+	doc.text("Special Requests:",settings.lmargin+leftLabel,settings.tmargin+topItemsList-0.05);
+	topItemsList += heightLine/2;
+	if(orderInfo.printerPref=="nopref"){
+		doc.text("- (MAE Only) No Printer Preference - Choose Whichever's Available",settings.lmargin+leftLabel+0.25,settings.tmargin+topItemsList);
+		topItemsList += heightLine/2;
+	}else if(orderInfo.printerPref=="polyjet"){
+		doc.text("- (MAE Only) Polyjet Preferred ($73.85/hr)",settings.lmargin+leftLabel+0.25,settings.tmargin+topItemsList);
+		topItemsList += heightLine/2;
+	}else if(orderInfo.printerPref="fdm"){
+		doc.text("- (MAE Only) FDM Preferred ($20.62/hr)",settings.lmargin+leftLabel+0.25,settings.tmargin+topItemsList);
+		topItemsList += heightLine/2;
+	}
+	if(orderInfo.meeting){
+		doc.text("- (MAE Only) We'd like to meet to discuss our options.",settings.lmargin+leftLabel+0.25,settings.tmargin+topItemsList);
+		topItemsList += heightLine/2;
+	}
+	if(orderInfo.deadline){
+		doc.text("- We have a tight print deadline - please contact us.",settings.lmargin+leftLabel+0.25,settings.tmargin+topItemsList);
+		topItemsList += heightLine/2;
+	}
+	topItemsList += heightLine/2;
+	
+	doc.setFontSize(9);
+	heightLine = 0.2;
+	heightText = 0.15;
+	
+	
+	//Admin Use Footer, First Page
+	insertFooter = function(){	
+		dashSizeAdminUse = 0.05;
+		marginAdminUseLine = 0.2;
+		textLineBottom = settings.height-settings.bmargin+heightLine+0.2;
+		doc.setLineWidth(0.01);
+		doc.dashedLine(settings.lmargin+marginAdminUseLine,settings.tmargin+bottomAdvisorSignature+0.2,settings.width-settings.rmargin-marginAdminUseLine,settings.tmargin+bottomAdvisorSignature+0.2,dashSizeAdminUse)
+		doc.setTextColor(150);
+		doc.setFillColor(255);
+		centerRectHeight = 0.2;
+		centerRectWidth = 1.5;
+		doc.rect((settings.width-centerRectWidth)/2,settings.tmargin+bottomAdvisorSignature+0.2-centerRectHeight/2,centerRectWidth,centerRectHeight,"F");
+		doc.centeredText("Official Use Only",settings.tmargin+bottomAdvisorSignature+0.2+heightText/4);
+		if(orderInfo.Urgent){
+			doc.setTextColor(255);
+			doc.setFillColor(125,0,0);
+			doc.rect(settings.lmargin,settings.height-settings.bmargin+0.4,1,0.5,"F");
+			doc.text("URGENT",settings.lmargin+0.25,settings.height-settings.bmargin+0.7);
+		}
+		if(pageCount==1){
+			doc.setTextColor(0);
+			doc.setLineWidth(0.01);
+			doc.rect(settings.lmargin+1.05-0.9,settings.height-settings.bmargin+0.4,1,0.5,"D");
+			doc.text("Sub",settings.lmargin+1.1-0.9,settings.height-settings.bmargin+0.7);
+			doc.setLineWidth(0.01);
+			doc.rect(settings.lmargin+2.25-0.9,settings.height-settings.bmargin+0.4,1,0.5,"D");
+			doc.text("Void",settings.lmargin+2.3-0.9,settings.height-settings.bmargin+0.7);
+			doc.setFontSize(18);
+			doc.setTextColor(100,0,0);
+			doc.text("Estimated Cost:",settings.lmargin+2.7,settings.height-settings.bmargin+0.7)
+			doc.rect(settings.lmargin+2.55,settings.height-settings.bmargin+0.4,4.35,1,"D");
+			doc.setFontSize(14);
+			doc.setTextColor(0);
+			date = new Date();
+			doc.text("Date: "+(date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear(),settings.lmargin+0.6,settings.height-settings.bmargin+1.25);
+			doc.setFontSize(9);
+			doc.setTextColor(0);
+			
+		}else{
+			doc.setFontSize(8);
+			doc.setTextColor(0);
+			doc.text("B",settings.lmargin+2,settings.height-settings.bmargin+0.7);
+			doc.text("C",settings.lmargin+3.25,settings.height-settings.bmargin+0.7);
+			doc.text("D",settings.lmargin+4.5,settings.height-settings.bmargin+0.7);
+			doc.text("VOID",settings.lmargin+5.75,settings.height-settings.bmargin+0.7);
+		}
+	};
+	insertFooter();
+	
+	
+	//doc.output("dataurlnewwindow");
+	doc.save(""+orderInfo.groupNumber +"_3D"+ Math.floor(Date.now()/100/60/60/24) +".pdf")
+};
