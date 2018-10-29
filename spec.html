@@ -1,0 +1,243 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Rutgers MAE | Additional Forms for 650:467 Design & Manufacturing I</title>
+        <meta name="description" content="Rutgers MAE Design and Manufacturing 2016-2017 Order Form">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/override.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery-ui.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/vendor/jspdf.debug.js"></script>
+		
+		<script src="js/main.js"></script>
+		<script src="js/ui.js"></script>
+		<script src="js/forms.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar bg-scarlet" role="navigation">
+      <div class="container width-100">
+        <div class="navbar-header text-center text-vertical-center width-100">
+			<div id="nav-logo">
+				<img src="./img/logo.png"></img>
+			</div>
+			<div id="nav-text">
+				<h3>650:467 Design & Manufacturing Portal</h3>
+			</div>
+        </div>
+      </div>
+    </nav>
+	<div class="container padding-2em text-center">
+		<h3>Additional Forms</h3>
+	</div>
+	<div class="container padding-3em">
+		<div class="container width-75">
+			<h3>Information Required For All Forms</h3>
+			<br>
+			<form>
+				<fieldset id="settings-group-project-info">
+					<legend>
+						<h5 class="text-info">Project Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="settings-group-number" class="col-xs-2 col-form-label">Group Number</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-group-number" placeholder="e.g. Q1">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-project-name" class="col-xs-2 col-form-label">Project Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-project-name" placeholder="e.g. Example Project Title">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-advisor" class="col-xs-2 col-form-label">Advisor</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-advisor" placeholder="e.g. Assimina Pelegri">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset id="settings-group-leader-info">
+					<legend>
+						<h5 class="text-info">Leader Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="settings-leader-name" class="col-xs-2 col-form-label">Leader Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-leader-name" placeholder="e.g. Firstname Lastname">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-leader-netid" class="col-xs-2 col-form-label">Leader NetID</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-leader-netid" placeholder="e.g. abc123">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-leader-email" class="col-xs-2 col-form-label">Leader Email</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-leader-email" placeholder="e.g. leader@rutgers.edu">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset id="settings-financial-officer-info">
+					<legend>
+						<h5 class="text-info">Financial Officer Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="settings-financial-officer-name" class="col-xs-2 col-form-label">Financial Officer Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-financial-officer-name" placeholder="e.g. Firstname Lastname">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-financial-officer-netid" class="col-xs-2 col-form-label">Financial Officer NetID</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-financial-officer-netid" placeholder="e.g. xyz123">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="settings-financial-officer-email" class="col-xs-2 col-form-label">Financial Officer Email</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="settings-financial-officer-email" placeholder="e.g. financial.officer@rutgers.edu">
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<br>
+			<h3>Specialized Part Order Form</h3>
+			<form id="form-special-part-order" class="width-85 margin-auto border-light padding-2em">
+				<p>
+					Please fill in the form below and submit a signed hard copy to request a specialized part. All lines are required. Note that incomplete forms may be rejected.
+				</p>
+				<br>
+				<fieldset id="special-part-order-recipient">
+					<legend>
+						<h5 class="text-info">Recipient Info</h5>
+					</legend>
+					<div class="form-group row">
+						<label for="special-part-order-recipient-name" class="col-xs-2 col-form-label">Recipient Name</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="special-part-order-recipient-name" placeholder="e.g. Firstname Lastname">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="special-part-order-recipient-netid" class="col-xs-2 col-form-label">Recipient NetID</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="special-part-order-recipient-netid" placeholder="e.g. xyz123">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="special-part-order-recipient-email" class="col-xs-2 col-form-label">Recipient Email</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="special-part-order-recipient-email" placeholder="e.g. recipient@rutgers.edu">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="special-part-order-recipient-phone" class="col-xs-2 col-form-label">Recipient Phone</label>
+						<div class="col-xs-9">
+							<input class="form-control form-control-sm" type="text" id="special-part-order-recipient-phone" placeholder="e.g. (555)123-4567">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset id="special-part-order-parts-list">
+					<legend>
+						<h5 class="text-info">Parts List</h5>
+					</legend>
+					<p>Please list all items you are interested in buying from a non-approved vendor.</p>
+					<table class="table table-hover small">
+						<thead>
+							<tr>
+								<td><h5>Vendor</h5></td>
+								<td><h5>Item SKU#</h5></td>
+								<td><h5>Quantity</h5></td>
+								<td><h5>Price/Unit</h5></td>
+								<td><h5>Link to Item</h5></td>
+							</tr>
+						</thead>
+						<tbody class="small" id="items-list">
+							<tr class="items-list-line">
+								<td class="item-vendor"><input type="text" class="form-control item-vendor-input"placeholder="Vendor"></input</td>
+								<td class="item-sku"><input type="text" class="form-control item-sku-input" placeholder="Item SKU#"></input></td>
+								<td class="item-quantity"><input type="text" class="form-control item-quantity-input" placeholder="Quantity"></input></td>
+								<td class="item-price"><input type="text" class="form-control item-price-input" placeholder="0.00"></input></td>
+								<td class="item-link"><input type="text" class="form-control item-link-input" placeholder="http://"></input></td>
+								<td class="text-right">
+									<button type="button" class="btn btn-danger btn-circle button-delete"><i class="glyphicon glyphicon-remove"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table">
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="text-right">
+									<button type="button" class="btn btn-success btn-circle button-add"><i class="glyphicon glyphicon-plus-sign"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				<fieldset id="special-part-order-declarations">
+					<legend>
+						<h5 class="text-info">Declarations</h5>
+					</legend>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="special-part-order-declaration-amazon" type="checkbox" value="" checked>We checked Amazon for similar parts and didn't find anything.</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="special-part-order-declaration-mcmaster" type="checkbox" value="" checked>We checked McMaster-Carr for similar parts and didn't find anything.</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row margin-auto">
+						<div>
+							<div class="checkbox">
+								<label><input id="special-part-order-declaration-approved-vendors" type="checkbox" value="" checked>We checked all Approved Vendors for similar parts and didn't find anything.</label>
+							</div>
+						</div>
+					</div>
+					<br><br>
+				</fieldset>
+				<div class="text-right padding-1em">
+					<button class="btn btn-md btn-danger" id="button-special-part-order" type="button">Generate Files</button>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+
+    </body>
+</html>
